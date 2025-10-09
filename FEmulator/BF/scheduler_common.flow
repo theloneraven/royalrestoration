@@ -1,0 +1,100 @@
+void EveryMorning_Base_hook()
+{
+    int var1;
+    int var2;
+    RECOVERY_ALL();
+    MAIN_InitFlag();
+    MAIN_SetDangerPoint();
+    MAIN_SetConquestFlag();
+    MAIN_SetNightKeyfree();
+    MAIN_SetShortcutFlag();
+    MAIN_SetHideout();
+    MAIN_InitUniform();
+    MAIN_NPC_reset();
+    MAIN_NPCicon_set();
+    MAIN_Flgset_migaki();
+    MAIN_HeroBagInit();
+    MAIN_KfevtFlagInit();
+    MAIN_ShopInit();
+    MAIN_QuestManager();
+    MAIN_Facility_VelvetRoom();
+    MAIN_Velvet_CombineInfo();
+    MAIN_SetBattleInit();
+    MAIN_HARU_GARDENING();
+    MAIN_DELIVERY_SYS();
+    MAIN_InitKawakamiRequest();
+    MAIN_FieldEnvSE();
+    MAIN_NPC_GO_OUT_FLAG_RESET();
+    MAIN_InitDirectCommand();
+    MAIN_TwinsOutingCount();
+    MAIN_InitYusukeSkillCard();
+    MAIN_TRADE_NPC_SetDisp();
+    MAIN_HaruIrregularTerm();
+    FCL_SHOP_CHANGE_FLAG();
+    MISSION_UPDATE_EVERY_DAY();
+    EVERY_MORNING_NETWORK();
+    NPC_BIT_ON(0);
+    CMM_COUNTUP_REVERSE_DAY();
+    var1 = 0;
+    var2 = SCRIPT_READ(0, 0, 0);
+    SCRIPT_READ_SYNC(var2);
+    SCRIPT_EXEC(var2, var1);
+    SCRIPT_FREE(var2);
+    MAIN_ChatFlagInit();
+    MAIN_ChkGotoResultDay();
+    Sub_ReSet_BanditCall_Flags();
+    RestoredHangouts();
+
+    return;
+}
+
+void RestoredHangouts()
+{
+    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "karaoke")
+        && BIT_CHK(6344) && !BIT_CHK(12461)
+        && (CHK_DAYS_STARTEND(4, 18, 4, 30)
+            || (CHK_DAY(5, 1) && !GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "hospital")))
+    {
+        CALL_EVENT(740, 091);
+        BIT_ON(12461);
+    }
+    if (BIT_CHK(6744) && CHK_DAYS_STARTEND(5, 18, 6, 4) && !CHK_DAYS(5, 30))
+    {
+        if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "diner") && !BIT_CHK(12462))
+        {
+            CALL_EVENT(740, 101);
+            BIT_ON(12462);
+        }
+        else if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "park") && !BIT_CHK(12463))
+        {
+            CALL_EVENT(740, 111);
+            BIT_ON(12463);
+        }
+    }
+    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "kichijoji")
+        && BIT_CHK(7144) && !BIT_CHK(12464)
+        && CHK_DAYS_STARTEND(6, 21, 7, 8))
+    {
+        CALL_EVENT(740, 121);
+        BIT_ON(12464);
+    }
+    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "skytree")
+        && BIT_CHK(7544) && !BIT_CHK(12465)
+        && CHK_DAYS_STARTEND(7, 26, 8, 20))
+    {
+        CALL_EVENT(489, 75);
+        CALL_EVENT(489, 80);
+        BIT_ON(12465);
+        BIT_ON(2241);
+    }
+    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "shinjuku")
+        && BIT_CHK(7944) && !BIT_CHK(12466)
+        && CHK_DAYS_STARTEND(9, 19, 10, 10)
+        && (BIT_CHK(2123) || !CHK_DAYS_STARTEND(10, 3, 10, 4))) // yoshizawa check
+    {
+        CALL_EVENT(740, 151);
+        CALL_EVENT(740, 152);
+        if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "angelandjulian")) { CALL_EVENT(740, 153); }
+        BIT_ON(12466);
+    }
+}

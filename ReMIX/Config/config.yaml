@@ -1,0 +1,115 @@
+settings:
+    - id: hospital
+      type: toggle
+      default: true
+      name: Shiho Hospital
+      category: Plot Additions
+      description: Ann visits Shiho in the hospital. Plays on 5/1 if you've beaten the Palace.
+    - id: karaoke
+      type: toggle
+      default: true
+      name: Karaoke with Ann, Ryuji, and Morgana
+      category: Hangouts
+      description: Plays the day after beating Kamoshida Palace. Note that on 5/1 the hospital scene will take precedence over this.
+    - id: willseeds
+      type: toggle
+      default: true
+      name: Enable Backstories
+      category: Will Seed Backstories
+      description: wip
+    - id: counseling
+      type: toggle
+      default: false
+      name: Counseling Voices
+      category: Voices
+      description: wip
+    - id: diner
+      type: toggle
+      default: true
+      name: Shibuya Diner with Ann, Ryuji, and Morgana
+      category: Hangouts
+      description: wip
+    - id: park
+      type: toggle
+      default: true
+      name: Inokashira Park with Ann, Ryuji, and Morgana
+      category: Hangouts
+      description: wip
+    - id: kichijoji
+      type: toggle
+      default: true
+      name: Kichijoji with Ann, Ryuji, and Morgana
+      category: Hangouts
+      description: wip
+    - id: skytree
+      type: toggle
+      default: true
+      name: Skytree with PTs
+      category: Hangouts
+      description: PTs go to Skytree the day after clearing Futaba palace.
+    - id: shinjuku
+      type: toggle
+      default: true
+      name: Shinjuku with Haru, Ryuji, and Yusuke
+      category: Hangouts
+      description: wip
+    - id: newyearvoice
+      type: toggle
+      default: false
+      name: New Year's Dream Voice
+      category: Voices
+      description: wip
+    - id: sadweek
+      type: toggle
+      default: true
+      name: Sad Week Voices
+      category: Voices
+      description: wip
+    - id: nosatanael
+      type: toggle
+      default: true
+      name: No Satanael
+      category: Plot Additions
+      description: wip
+    - id: hallofgrail
+      type: toggle
+      default: true
+      name: Seeing Hall of the Grail
+      category: Plot Additions
+      description: wip
+    - id: thirdpersona
+      type: toggle
+      default: false
+      name: Third Awakening Voices
+      category: Voices
+      description: wip
+    - id: herewardjazz
+      type: toggle
+      default: false
+      name: Beta Akechi Third Awakening
+      category: Plot-Altering Changes
+      description: wip
+    - id: shelter
+      type: toggle
+      default: false
+      name: Akechi Shelter
+      category: Plot Additions
+      description: wip
+    - id: commuparty
+      type: toggle
+      default: true
+      name: Adult Confidant Party
+      category: Plot Additions
+      description: wip
+    - id: angelandjulian
+      type: toggle
+      default: false
+      name: Angel and Julian
+      category: Misc Options
+      description: wip
+    - id: haremmaruki
+      type: toggle
+      default: false
+      name: Maruki Harem Endings
+      category: Plot Additions
+      description: wip

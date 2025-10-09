@@ -1,0 +1,79 @@
+// Procedure Index: 5
+void SUB_Velvet_CombineEvent_hook()
+{
+
+    if (BIT_CHK(10230) == 1)
+    {
+        return;
+    }
+
+
+    if ((BIT_CHK(11520) == 1) && (BIT_CHK(11570) == 0))
+    {
+
+        if (BIT_CHK(11931) == 1)
+        {
+            CALL_EVENT(60, 10);
+        }
+        else
+        {
+            CALL_EVENT(60, 20);
+        }
+
+        BIT_ON(11570);
+        BIT_ON(10230);
+        CALL_FIELD(10, 3, 0, 0);
+        return;
+    }
+
+
+    if (CHK_DAYS_STARTEND(1, 12, 3, 31) == 1)
+    {
+        if (BIT_CHK(2131) == 0)
+        {
+            CALL_EVENT(791, 30);
+            BIT_ON(2131);
+            BIT_ON(10230);
+        }
+        else if ((GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "nosatanael") && (BIT_CHK(2047) == 0) && ((BIT_CHK(11790) == 0)
+        {
+            CALL_EVENT(791, 11);
+            BIT_ON(2047);
+            BIT_ON(10230);
+        }
+
+        CALL_FIELD(10, 3, 0, 0);
+    }
+
+
+    if ((BIT_CHK(10227) == 1) && (BIT_CHK(11896) == 0))
+    {
+        CALL_EVENT(791, 3);
+        BIT_ON(11896);
+        BIT_ON(10230);
+        CALL_FIELD(10, 3, 0, 0);
+        return;
+    }
+
+
+    if ((BIT_CHK(10228) == 1) && (BIT_CHK(11897) == 0))
+    {
+        CALL_EVENT(791, 4);
+        BIT_ON(11897);
+        BIT_ON(10230);
+        CALL_FIELD(10, 3, 0, 0);
+        return;
+    }
+
+
+    if ((BIT_CHK(10229) == 1) && (BIT_CHK(11898) == 0))
+    {
+        CALL_EVENT(791, 5);
+        BIT_ON(11898);
+        BIT_ON(10230);
+        CALL_FIELD(10, 3, 0, 0);
+        return;
+    }
+
+    return;
+}

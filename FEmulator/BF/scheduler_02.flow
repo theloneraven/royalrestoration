@@ -1,0 +1,145 @@
+// Procedure Index: 30
+void sdl02_03_PM_D_S3_hook()
+{
+
+    if ((BIT_CHK(10249) == 0) && (BIT_CHK(2120) == 0))
+    {
+        BIT_ON(12543);
+        DATE_DISP(0);
+        CALL_EVENT(511, 567);
+        BIT_OFF(125);
+        CALL_EVENT(511, 568);
+        BIT_OFF(12543);
+        DATE_DISP(1);
+        BIT_OFF(12027);
+
+        if (BIT_CHK(125) == 1)
+        {
+
+            if (LOAD_TEMPORARY() == 0)
+            {
+                CALL_TITLE();
+            }
+
+        }
+        else
+        {
+            CALL_TITLE();
+        }
+
+        return;
+    }
+    else
+    {
+        BIT_OFF(101);
+        CALL_EVENT(522, 20);
+        CALL_EVENT(522, 30);
+        SET_NEXT_DAY(2, 14, 0);
+    }
+
+    return;
+}
+
+
+// Procedure Index: 88
+void sdl02_10_PM_C_RE_hook()
+{
+
+    if ((BIT_CHK(3169) == 1) || (BIT_CHK(3182) == 1))
+    {
+        CALL_EVENT(470, 611);
+    }
+
+
+    if ((BIT_CHK(3184) == 1) || (BIT_CHK(3185) == 1))
+    {
+        CALL_EVENT(470, 711);
+    }
+
+
+    if ((GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "shelter") && CMM_GET_LV(9) == 10)
+    {
+        CALL_EVENT(470, 810);
+    }
+
+
+    if (BIT_CHK(164) == 0)
+    {
+        BIT_OFF(12543);
+        BIT_OFF(12305);
+        DATE_DISP(1);
+    }
+
+    SET_NEXT_DAY(2, 13, 0);
+    return;
+}
+
+
+void sdl02_14_PM_D_S3()
+{
+    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "haremmaruki")
+    {
+        int valentinesharem;
+        valentinesharem = 0;
+
+        if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+        {
+            valentinesharem = (valentinesharem + 1);
+        }
+
+
+        if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+        {
+            valentinesharem = (valentinesharem + 1);
+        }
+
+
+        if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+        {
+            valentinesharem = (valentinesharem + 1);
+        }
+
+
+        if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+        {
+            valentinesharem = (valentinesharem + 1);
+        }
+
+
+        if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+        {
+            valentinesharem = (valentinesharem + 1);
+        }
+
+
+        if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+        {
+            valentinesharem = (valentinesharem + 1);
+        }
+
+
+        if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+        {
+            valentinesharem = (valentinesharem + 1);
+        }
+
+
+        if (BIT_CHK(3799) && (CMM_GET_LV(0x10) == 10))
+        {
+            valentinesharem = (valentinesharem + 1);
+        }
+
+
+        if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+        {
+            valentinesharem = (valentinesharem + 1);
+        }
+
+
+        if (valentinesharem = 9)
+        {
+            CALL_EVENT(522 , 40)
+        }
+    }
+    SET_NEXT_DAY(3, 13, 0);
+}

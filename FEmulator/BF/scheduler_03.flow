@@ -1,0 +1,149 @@
+void sdl03_03_PM_D_RE_hook()
+{
+  CALL_EVENT( 881, 202 );
+  if ((GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "commuparty") && ( CMM_GET_LV( 13 ) == 10 ) && ( CMM_GET_LV( 20 ) == 10 ) && ( CMM_GET_LV( 15 ) == 10 ) && ( CMM_GET_LV( 16 ) ==  10 ) && ( CMM_GET_LV( 11 ) == 10 ) && ( CMM_GET_LV( 14 ) == 10 ) )
+    {
+        CALL_EVENT( 521, 30 );
+    }
+  SET_NEXT_DAY( 3, 13, 0 );
+}
+
+
+void sdl03_13_PM_D_S3()
+{
+    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "haremmaruki")
+    {
+        int whitedayharem;
+        whitedayharem = 0;
+
+        if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3799) && (CMM_GET_LV(0x10) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (whitedayharem = 9)
+        {
+            CALL_EVENT(522 , 50)
+        }
+    }
+    SET_NEXT_DAY(3, 14, 0);
+}
+
+void sdl03_14_PM_D_S3()
+{
+    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "haremmaruki")
+    {
+        int whitedayharem;
+        whitedayharem = 0;
+
+        if (BIT_CHK(3792) && (CMM_GET_LV(3) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3793) && (CMM_GET_LV(4) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3794) && (CMM_GET_LV(7) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3795) && (CMM_GET_LV(10) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3796) && (CMM_GET_LV(11) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3797) && (CMM_GET_LV(14) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3798) && (CMM_GET_LV(15) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3799) && (CMM_GET_LV(0x10) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (BIT_CHK(3800) && (CMM_GET_LV(18) == 10))
+        {
+            whitedayharem = (whitedayharem + 1);
+        }
+
+
+        if (whitedayharem = 9)
+        {
+            CALL_EVENT(522 , 55)
+        }
+    }
+    SET_NEXT_DAY(3, 15, 0);
+}
+

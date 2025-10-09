@@ -1,0 +1,64 @@
+[
+  {
+    "Index": "0x4364",
+    "ReturnType": "int",
+    "Name": "IS_MOD_ENABLED",
+    "Description": "Returns 1 if a mod is enabled, 0 otherwise.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      }
+    ]
+  },
+  {
+    "Index": "0xD842",
+    "ReturnType": "int",
+    "Name": "GET_CONFIG_INT_VALUE",
+    "Description": "Returns the value of a config option as an int, or 0 if the mod is not enabled. For enums, returns the underlying int value.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "configId",
+        "Description": "ID of a config value as seen in a mod's Config.json or data.yaml, or in its source code or ReMIX schema."
+      }
+    ]
+  },
+  {
+    "Index": "0x9FE2",
+    "ReturnType": "float",
+    "Name": "GET_CONFIG_FLOAT_VALUE",
+    "Description": "Returns the value of a config option as a float, or 0 if the mod is not enabled.",
+    "Parameters": [
+      {
+        "Type": "string",
+        "Name": "modId",
+        "Description": "ID of a mod as seen in its ModConfig.json."
+      },
+      {
+        "Type": "string",
+        "Name": "configId",
+        "Description": "ID of a config value as seen in a mod's Config.json or data.yaml, or in its source code or ReMIX schema."
+      }
+    ]
+  },
+  {
+    "Index": "0x27CD",
+    "ReturnType": "int",
+    "Name": "CMM_GET_IN_USE_ID",
+    "Description": "Returns the id currently in use for a Confidant. For use with female Confidants. Returns -1 if Confidant has not been started.",
+    "Parameters": [
+      {
+        "Type": "int",
+        "Name": "commuId",
+        "Description": "Confidant's id as seen in CMM.BIN."
+      }
+    ]
+  }  
+]
