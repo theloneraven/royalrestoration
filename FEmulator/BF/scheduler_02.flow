@@ -34,7 +34,9 @@ void sdl02_03_PM_D_S3_hook()
         BIT_OFF(101);
         CALL_EVENT(522, 20);
         CALL_EVENT(522, 30);
-        SET_NEXT_DAY(2, 14, 0);
+        
+        if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "haremmaruki") { SET_NEXT_DAY(2, 14, 0); }
+        else { SET_NEXT_DAY(3, 15, 0); }
     }
 
     return;
@@ -77,8 +79,6 @@ void sdl02_10_PM_C_RE_hook()
 
 void sdl02_14_PM_D_S3()
 {
-    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "haremmaruki")
-    {
         int valentinesharem;
         valentinesharem = 0;
 
@@ -140,6 +140,5 @@ void sdl02_14_PM_D_S3()
         {
             CALL_EVENT(522 , 40)
         }
-    }
     SET_NEXT_DAY(3, 13, 0);
 }

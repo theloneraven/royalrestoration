@@ -2,6 +2,6 @@ import("scheduler_common.flow");
 
 void sdl05_01_PM_C_hook()
 {
-    if (GET_CONFIG_INT_VALUE("p5rpc.events.bdsm", "hospital") && BIT_CHK(6344)) { CALL_EVENT(980, 201); }
+    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "hospital") && BIT_CHK(6344)) { CALL_EVENT(980, 201); }
     return;
 }

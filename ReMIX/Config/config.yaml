@@ -17,11 +17,11 @@ settings:
       name: Enable Backstories
       category: Will Seed Backstories
       description: wip
-    - id: counseling
+    - id: twinshangouts
       type: toggle
-      default: false
-      name: Counseling Voices
-      category: Voices
+      default: true
+      name: Twins Hangout Exposition
+      category: Plot Additions
       description: wip
     - id: diner
       type: toggle
@@ -47,23 +47,53 @@ settings:
       name: Skytree with PTs
       category: Hangouts
       description: PTs go to Skytree the day after clearing Futaba palace.
+    - id: hawaiimunchies
+      type: toggle
+      default: true
+      name: Mishima Wants Local Hawaiian Food
+      category: Plot Additions
+      description: wip
+    - id: kamehameha
+      type: toggle
+      default: true
+      name: Kamehameha Statue
+      category: Plot Additions
+      description: wip
+    - id: akechiblackmail
+      type: toggle
+      default: true
+      name: Akechi Watches You Leave Okumura Palace
+      category: Plot Additions
+      description: wip
     - id: shinjuku
       type: toggle
       default: true
       name: Shinjuku with Haru, Ryuji, and Yusuke
       category: Hangouts
       description: wip
-    - id: newyearvoice
-      type: toggle
-      default: false
-      name: New Year's Dream Voice
-      category: Voices
-      description: wip
-    - id: sadweek
+    - id: suidobashi
       type: toggle
       default: true
-      name: Sad Week Voices
-      category: Voices
+      name: Suidobashi with the Twins
+      category: Hangouts
+      description: wip
+    - id: shushou
+      type: toggle
+      default: true
+      name: Concerned Prime Minister
+      category: Plot Additions
+      description: wip
+    - id: yaldyending
+      type: toggle
+      default: true
+      name: Extra Yaldabaoth Ending Scene
+      category: Plot Additions
+      description: wip
+    - id: yaldyfight
+      type: toggle
+      default: true
+      name: Extra Yaldabaoth Battle Dialogue
+      category: Battle Additions
       description: wip
     - id: nosatanael
       type: toggle
@@ -76,12 +106,6 @@ settings:
       default: true
       name: Seeing Hall of the Grail
       category: Plot Additions
-      description: wip
-    - id: thirdpersona
-      type: toggle
-      default: false
-      name: Third Awakening Voices
-      category: Voices
       description: wip
     - id: herewardjazz
       type: toggle
@@ -106,10 +130,4 @@ settings:
       default: false
       name: Angel and Julian
       category: Misc Options
-      description: wip
-    - id: haremmaruki
-      type: toggle
-      default: false
-      name: Maruki Harem Endings
-      category: Plot Additions
       description: wip
