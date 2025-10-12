@@ -1,0 +1,11 @@
+void sdl12_17_PM_E_hook()
+{
+    KAWAKAMI_ITEM_RECIEVE();
+    sdl_Coop_Holiday_Invite();
+    TODAY_SASOI_MUSI_CHECKER();
+    sdl_shido_after_akechi();
+    sdl_shido_clear_midnight();
+    if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "shushou")) { CALL_EVENT(403, 1); }
+    CALL_EVENT(880, 5);
+    return;
+}

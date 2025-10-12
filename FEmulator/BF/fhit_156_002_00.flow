@@ -1,0 +1,30 @@
+void D156_02_SCENARIO_EV01_hook()
+{
+    int var3;
+    BIT_ON(7959);
+    SET_COUNT(149, 11550);
+    var3 = FLD_SCRIPT_READ(156, 2, 110);
+    FLD_SCRIPT_READ_SYNC(var3);
+    FLD_SCRIPT_EXEC(var3, 0);
+    FLD_SCRIPT_FREE(var3);
+    CALL_EVENT(329, 1);
+    SET_COUNT(149, 19000);
+    BIT_OFF(6211);
+    BIT_OFF(6212);
+    BIT_ON(7946);
+    BIT_ON(6220);
+    dungeon_return();
+    BIT_OFF(6220);
+    
+    if (CHK_DAYS(4, 2) == 1)
+    {
+        DUNGEON_EXIT_DEBUG();
+    }
+    else 
+    {
+        if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "akechiblackmail")) { CALL_EVENT(329, 2); }
+        CALL_CALENDAR();
+    }
+
+    return;
+}

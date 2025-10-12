@@ -1,0 +1,77 @@
+void D08_VELVET_SCENARIO_BAT_hook()
+{
+    int_CLEAR();
+    sVar0 = 791;
+    sVar1 = (0x20000000 + 3116);
+    sVar10 = 160;
+    sVar11 = 10;
+    sVar13 = 10;
+    sVar12 = 0;
+    RECOVERY_ALL();
+    FLD_PARTY_SAVE();
+    PARTY_OUT(2);
+    BIT_OFF(11824);
+    PARTY_OUT(3);
+    BIT_OFF(11825);
+    PARTY_OUT(4);
+    BIT_OFF(11826);
+    PARTY_OUT(5);
+    BIT_OFF(11827);
+    PARTY_OUT(6);
+    BIT_OFF(11828);
+    PARTY_OUT(7);
+    BIT_OFF(11830);
+    PARTY_OUT(8);
+    BIT_OFF(11829);
+    SET_COUNT(152, 41100);
+    ALERT_CLEAR_EX();
+    BIT_OFF(10662);
+    
+    if (BIT_CHK(sVar1) == 0)
+    {
+        BIT_ON(sVar1);
+        
+        if (CMM_EXIST(1) == 0)
+        {
+            CMM_OPEN(1);
+        }
+
+        CMM_SET_LV(1, 10);
+        CALL_EVENTBATTLE(451, 1, sVar0);
+    }
+    else 
+    {
+        FLD_RETRY_BOSS_SAVE();
+        CALL_BATTLE(sVar0);
+        WAIT_BATTLE();
+    }
+
+    RECOVERY_ALL();
+    BIT_ON(171);
+    SET_COUNT(152, 41150);
+    CALL_EVENT(451, 3);
+    CALL_EVENT(451, 13);
+    CALL_EVENT(451, 4);
+    BIT_ON(11931);
+    
+    if (BIT_CHK(161) == 1)
+    {
+        if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "yaldyending")) { CALL_EVENT(445, 2); }
+        PUSH_WEATHER(0);
+        DATE_DISP(0);
+        BIT_ON(12543);
+        CALL_EVENT(476, 1);
+        CALL_EVENT(476, 2);
+        CLEAR_WEATHER();
+        CALL_STAFF_ROLL();
+        CALL_CLEAR_SAVE();
+        CALL_TITLE();
+        return;
+    }
+    else 
+    {
+        BIT_OFF(6221);
+        CALL_FIELD(sVar10, sVar11, sVar13, sVar12);
+    }
+
+}

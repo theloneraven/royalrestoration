@@ -35,6 +35,12 @@ settings:
       name: Inokashira Park with Ann, Ryuji, and Morgana
       category: Hangouts
       description: wip
+    - id: hangure
+      type: toggle
+      default: true
+      name: Kaneshiro Talking With Goons
+      category: Plot Additions
+      description: wip
     - id: kichijoji
       type: toggle
       default: true
