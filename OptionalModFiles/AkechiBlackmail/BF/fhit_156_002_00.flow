@@ -22,7 +22,7 @@ void D156_02_SCENARIO_EV01_hook()
     }
     else 
     {
-        if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "akechiblackmail")) { CALL_EVENT(329, 2); }
+        CALL_EVENT(329, 2); // addition
         CALL_CALENDAR();
     }
 

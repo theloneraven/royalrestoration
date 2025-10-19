@@ -1,0 +1,32 @@
+// Procedure Index: 88
+void sdl02_10_PM_C_RE_hook()
+{
+
+    if ((BIT_CHK(3169) == 1) || (BIT_CHK(3182) == 1))
+    {
+        CALL_EVENT(470, 611);
+    }
+
+
+    if ((BIT_CHK(3184) == 1) || (BIT_CHK(3185) == 1))
+    {
+        CALL_EVENT(470, 711);
+    }
+
+
+	if (CMM_GET_LV(9) == 10)
+	{
+		CALL_EVENT(470, 810); // akechi
+	}
+
+
+    if (BIT_CHK(164) == 0)
+    {
+        BIT_OFF(12543);
+        BIT_OFF(12305);
+        DATE_DISP(1);
+    }
+
+    SET_NEXT_DAY(2, 13, 0);
+    return;
+}

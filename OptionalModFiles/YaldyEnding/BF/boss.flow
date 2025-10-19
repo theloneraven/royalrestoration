@@ -56,7 +56,7 @@ void D08_VELVET_SCENARIO_BAT_hook()
     
     if (BIT_CHK(161) == 1)
     {
-        if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "yaldyending")) { CALL_EVENT(445, 2); }
+        CALL_EVENT(445, 2);  // addition
         PUSH_WEATHER(0);
         DATE_DISP(0);
         BIT_ON(12543);

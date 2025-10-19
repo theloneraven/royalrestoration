@@ -196,6 +196,7 @@
   },
   "IsUniversalMod": false,
   "ModDependencies": [
+    "crifs.v2.hook",
     "p5rpc.flowutils",
     "p5rpc.modloader",
     "reloaded.universal.fileemulationframework.bf",

@@ -34,48 +34,11 @@ void sdl02_03_PM_D_S3_hook()
         BIT_OFF(101);
         CALL_EVENT(522, 20);
         CALL_EVENT(522, 30);
-        
-        if (GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "haremmaruki") { SET_NEXT_DAY(2, 14, 0); }
-        else { SET_NEXT_DAY(3, 15, 0); }
+        SET_NEXT_DAY(2, 14, 0);
     }
 
     return;
 }
-
-
-// Procedure Index: 88
-void sdl02_10_PM_C_RE_hook()
-{
-
-    if ((BIT_CHK(3169) == 1) || (BIT_CHK(3182) == 1))
-    {
-        CALL_EVENT(470, 611);
-    }
-
-
-    if ((BIT_CHK(3184) == 1) || (BIT_CHK(3185) == 1))
-    {
-        CALL_EVENT(470, 711);
-    }
-
-
-    if ((GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "shelter") && CMM_GET_LV(9) == 10)
-    {
-        CALL_EVENT(470, 810);
-    }
-
-
-    if (BIT_CHK(164) == 0)
-    {
-        BIT_OFF(12543);
-        BIT_OFF(12305);
-        DATE_DISP(1);
-    }
-
-    SET_NEXT_DAY(2, 13, 0);
-    return;
-}
-
 
 void sdl02_14_PM_D_S3()
 {

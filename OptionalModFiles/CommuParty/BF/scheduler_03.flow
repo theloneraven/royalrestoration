@@ -1,0 +1,9 @@
+void sdl03_03_PM_D_RE_hook()
+{
+  CALL_EVENT( 881, 202 );
+  if (( CMM_GET_LV( 13 ) == 10 ) && ( CMM_GET_LV( 20 ) == 10 ) && ( CMM_GET_LV( 15 ) == 10 ) && ( CMM_GET_LV( 16 ) ==  10 ) && ( CMM_GET_LV( 11 ) == 10 ) && ( CMM_GET_LV( 14 ) == 10 ) )
+    {
+        CALL_EVENT( 521, 30 );
+    }
+  SET_NEXT_DAY( 3, 13, 0 );
+}

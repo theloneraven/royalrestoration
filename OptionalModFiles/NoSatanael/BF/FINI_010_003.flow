@@ -35,7 +35,7 @@ void SUB_Velvet_CombineEvent_hook()
             BIT_ON(2131);
             BIT_ON(10230);
         }
-        else if ((GET_CONFIG_INT_VALUE("p5rpc.events.restoredevents", "nosatanael") && (BIT_CHK(2047) == 0) && ((BIT_CHK(11790) == 0)
+        else if ((BIT_CHK(2047) == 0) && ((BIT_CHK(11790) == 0) // addition
         {
             CALL_EVENT(791, 11);
             BIT_ON(2047);

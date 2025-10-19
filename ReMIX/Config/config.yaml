@@ -16,7 +16,7 @@ settings:
       default: true
       name: Enable Backstories
       category: Will Seed Backstories
-      description: wip
+      description: Backstory scenes will play for certain Palace Rulers when you take their Will Seeds.
     - id: twinshangouts
       type: toggle
       default: true
@@ -70,7 +70,7 @@ settings:
       default: true
       name: Akechi Watches You Leave Okumura Palace
       category: Plot Additions
-      description: wip
+      description: Akechi snaps a picture of the PT leaving Okumura's Palace.
     - id: shinjuku
       type: toggle
       default: true
@@ -92,48 +92,136 @@ settings:
     - id: yaldyending
       type: toggle
       default: true
-      name: Extra Yaldabaoth Ending Scene
+      name: Extra Bad Ending
       category: Plot Additions
-      description: wip
+      description: Another bad ending to be aware of.
     - id: yaldyfight
       type: toggle
       default: true
-      name: Extra Yaldabaoth Battle Dialogue
+      name: Extra Final Boss Battle Dialogue
       category: Battle Additions
-      description: wip
+      description: Extra dialogue for the "final" boss.
     - id: nosatanael
       type: toggle
       default: true
       name: No Satanael
       category: Plot Additions
-      description: wip
+      description: Velvet Attendent tells you why you can't summon Satanael in the Third Semester. Only plays on NG.
     - id: hallofgrail
       type: toggle
       default: true
-      name: Seeing Hall of the Grail
+      name: Third Semester Mementos Treasure Hall
       category: Plot Additions
-      description: wip
+      description: Voiced/extra dialogue where PT see the treasure hall of Mementos post-"final" boss.
     - id: herewardjazz
       type: toggle
       default: false
       name: Beta Akechi Third Awakening
       category: Plot-Altering Changes
-      description: wip
+      description: An alternate third awakening for Akechi in the Jazz Club. Not recommended for first playthroughs.
     - id: shelter
       type: toggle
       default: false
-      name: Akechi Shelter
+      name: Black Mask Shelter Scene
       category: Plot Additions
-      description: wip
+      description: A scene of the Black Mask at a shelter if you maxed thier confidant in the True Royal Ending. Not recommended for first playthroughs.
     - id: commuparty
       type: toggle
       default: true
       name: Adult Confidant Party
       category: Plot Additions
-      description: wip
+      description: If you maxed all the adult confidants, a scene of a party with all of them plays in the True Royal Ending.
     - id: angelandjulian
       type: toggle
       default: false
       name: Angel and Julian
       category: Misc Options
-      description: wip
+      description: An addition to the Shinjuku hangout with Angel and Julian. Off by default because of the sensitive nature of these two characters.
+    - id: haremmaruki
+      type: toggle
+      default: false
+      name: Third Semester Bad Ending Harem Scene
+      category: Plot Additions
+      description: Adds three scenes to the third semester bad ending if you romanced all the girls.
+
+actions:
+    - using: CriFs.V2.Hook.Interfaces.ICriFsRedirectorApi
+      if: yaldyending
+      run: AddProbingPath
+      with:
+        - '{ModDir}/OptionalModFiles/YaldyEnding'
+    - using: BF.File.Emulator.Interfaces.IBfEmulator
+      if: yaldyending
+      run: AddDirectory
+      with:
+        - '{ModDir}/OptionalModFiles/YaldyEnding/BF'
+    - using: CriFs.V2.Hook.Interfaces.ICriFsRedirectorApi
+      if: akechiblackmail
+      run: AddProbingPath
+      with:
+        - '{ModDir}/OptionalModFiles/AkechiBlackmail'
+    - using: BF.File.Emulator.Interfaces.IBfEmulator
+      if: akechiblackmail
+      run: AddDirectory
+      with:
+        - '{ModDir}/OptionalModFiles/AkechiBlackmail/BF'
+    - using: CriFs.V2.Hook.Interfaces.ICriFsRedirectorApi
+      if: nosatanael
+      run: AddProbingPath
+      with:
+        - '{ModDir}/OptionalModFiles/NoSatanel'
+    - using: BF.File.Emulator.Interfaces.IBfEmulator
+      if: nosatanael
+      run: AddDirectory
+      with:
+        - '{ModDir}/OptionalModFiles/NoSatanael/BF'
+    - using: CriFs.V2.Hook.Interfaces.ICriFsRedirectorApi
+      if: haremmaruki
+      run: AddProbingPath
+      with:
+        - '{ModDir}/OptionalModFiles/HaremMaruki'
+    - using: BF.File.Emulator.Interfaces.IBfEmulator
+      if: haremmaruki
+      run: AddDirectory
+      with:
+        - '{ModDir}/OptionalModFiles/HaremMaruki/BF'
+    - using: BMD.File.Emulator.Interfaces.IBmdEmulator
+      if: haremmaruki
+      run: AddDirectory
+      with:
+        - '{ModDir}/OptionalModFiles/HaremMaruki/BMD'
+    - using: Reloaded.Universal.Localisation.Framework.Interfaces.ILocalisationFramework
+      if: haremmaruki
+      run: AddDirectory
+      with:
+        - '{ModDir}/OptionalModFiles/HaremMaruki/L10N'
+    - using: CriFs.V2.Hook.Interfaces.ICriFsRedirectorApi
+      if: commuparty
+      run: AddProbingPath
+      with:
+        - '{ModDir}/CommuParty/CommuParty'
+    - using: BF.File.Emulator.Interfaces.IBfEmulator
+      if: commuparty
+      run: AddDirectory
+      with:
+        - '{ModDir}/CommuParty/CommuParty/BF'
+    - using: CriFs.V2.Hook.Interfaces.ICriFsRedirectorApi
+      if: shelter
+      run: AddProbingPath
+      with:
+        - '{ModDir}/OptionalModFiles/Shelter'
+    - using: BF.File.Emulator.Interfaces.IBfEmulator
+      if: shelter
+      run: AddDirectory
+      with:
+        - '{ModDir}/OptionalModFiles/Shelter/BF'
+    - using: BMD.File.Emulator.Interfaces.IBmdEmulator
+      if: shelter
+      run: AddDirectory
+      with:
+        - '{ModDir}/OptionalModFiles/Shelter/BMD'
+    - using: Reloaded.Universal.Localisation.Framework.Interfaces.ILocalisationFramework
+      if: shelter
+      run: AddDirectory
+      with:
+        - '{ModDir}/OptionalModFiles/Shelter/L10N'
