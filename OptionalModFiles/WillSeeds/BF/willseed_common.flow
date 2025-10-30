@@ -1,0 +1,154 @@
+int eventMajor;
+int eventMinor;
+
+void seed_get_hook()
+{
+    int tboxFlag;
+    int fldMajor;
+    int redSeedFlagId;
+    int seedFlagOffset;
+    int hpRecovery;
+    int spRecovery;
+    tboxFlag = FLD_GET_TBOX_FLAG();
+    
+    if (tboxFlag == 0)
+    {
+        return;
+    }
+    else if (BIT_CHK(tboxFlag) == 0)
+    {
+        BIT_ON(tboxFlag);
+        FLD_GET_SEED();
+        fldMajor = FLD_GET_MAJOR();
+        redSeedFlagId = -1;
+        seedFlagOffset = -1;
+        hpRecovery = 0;
+        
+        if ((fldMajor == 151) || (fldMajor == 152))
+        {
+            redSeedFlagId = 10795;
+            eventMajor = 490;
+            spRecovery = 10;
+        }
+        else if (fldMajor == 153)
+        {
+            redSeedFlagId = 10851;
+            eventMajor = 491;
+            spRecovery = 10;
+        }
+        else if (fldMajor == 154)
+        {
+            redSeedFlagId = 10902;
+            spRecovery = 12;
+        }
+        else if (fldMajor == 155)
+        {
+            redSeedFlagId = 10959;
+            spRecovery = 15;
+        }
+        else if (fldMajor == 156)
+        {
+            redSeedFlagId = 11043;
+            eventMajor = 494;
+            spRecovery = 20;
+        }
+        else if (fldMajor == 157)
+        {
+            redSeedFlagId = 11085;
+            spRecovery = 20;
+        }
+        else if (fldMajor == 159)
+        {
+            redSeedFlagId = 11137;
+            spRecovery = 20;
+        }
+        else if (fldMajor == 162)
+        {
+            redSeedFlagId = 10721;
+            spRecovery = 25;
+        }
+
+        
+        if (redSeedFlagId >= 0)
+        {
+            
+            if (tboxFlag == 11259)
+            {
+                seedFlagOffset = 0;
+            }
+            else if (tboxFlag == 11260)
+            {
+                seedFlagOffset = 1;
+            }
+            else if (tboxFlag == 11261)
+            {
+                seedFlagOffset = 2;
+            }
+
+            
+            if (seedFlagOffset >= 0)
+            {
+                BIT_ON((redSeedFlagId + seedFlagOffset));
+                BIT_OFF((11188 + seedFlagOffset));
+            }
+
+            eventMinor = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                if (BIT_CHK(redSeedFlagId + i)) { eventMinor += 10; }
+            }
+
+            FLD_MEMBER_RECOVER_DIRECT(hpRecovery, spRecovery);
+            SEMI_AWAKENING_MAIN_PROCEDURE();
+        }
+
+    }
+
+}
+
+void SEMI_AWAKENING_MAIN_PROCEDURE_hook()
+{
+    SET_SEED_COUNT();
+    
+    if (sVar0 > 0)
+    {
+        EVENT_SEMI_AWAKENING();
+    }
+    else
+    {
+        int fldMajor = FLD_GET_MAJOR();
+        int fldMinor = FLD_GET_MINOR();
+
+        FADEOUT(15, 10);
+        FADE_SYNC();
+        CALL_EVENT(eventMajor, eventMinor);
+
+        CALL_FIELD(fldMajor, fldMinor, 4000, 0);
+    }
+
+    return;
+}
+
+void EVENT_SEMI_AWAKENING_hook()
+{
+    int fldMajor;
+    int fldMinor;
+    fldMajor = FLD_GET_MAJOR();
+    fldMinor = FLD_GET_MINOR();
+    FADEOUT(15, 10);
+    FADE_SYNC();
+    CALL_EVENT(eventMajor, 30);
+    CALL_EVENT(499, 190);
+    BIT_ON(11178);
+    
+    if (fldMajor >= 191)
+    {
+        CALL_BKUP_FIELD();
+    }
+    else 
+    {
+        CALL_EVENT(eventMajor, 40);
+        CALL_FIELD(fldMajor, fldMinor, 4000, 0);
+    }
+
+}

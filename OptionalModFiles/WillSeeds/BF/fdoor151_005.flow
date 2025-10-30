@@ -1,0 +1,41 @@
+void NEW_EX_12CE_hook()
+{
+    int var6;
+    var6 = FLD_OBJ_CNV_RESHND(4814);
+    
+    if (GET_COUNT(145) <= 43850)
+    {
+        SET_COUNT(145, 43850);
+    }
+
+    FLD_ROT_OBJ_CAMERA(var6, -15);
+    FLD_SET_DOOR_HIT_TYPE(4814, 9, 0x10);
+    BIT_ON(11191);
+    NORMAL_OPEN();
+    BIT_ON(11194);
+    Fld_FadeOut_CallEvent();
+    
+    if ((BIT_CHK(11260) == 0) && (BIT_CHK(11261) == 0))
+    {
+        CALL_EVENT(480, 170); // will seed tutorial
+        CALL_EVENT(490, 10);  // first backstory scene
+        
+        if (GET_COUNT(145) <= 43900)
+        {
+            SET_COUNT(145, 43900);
+        }
+
+        BIT_ON(6559);
+        BIT_OFF(6212);
+    }
+
+    BIT_ON(11259);
+    BIT_ON(10795); // red lust seed flag
+    
+    if (BIT_CHK(11245) == 1)
+    {
+        BIT_OFF(11245);
+    }
+
+    CALL_FIELD(151, 5, 4000, 0);
+}

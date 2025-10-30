@@ -1,0 +1,25 @@
+﻿[msg MSG_000_0_0 [Okumura]]
+[s][bup 0 205 0 0 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]Dad, Akiko... How have you been?[n][f 1 3 65535][w][e]
+
+[msg MSG_001_0_0 [Okumura]]
+[s][bup 0 205 0 0 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]I've been doing alright.[n]The company's successful as ever.[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]I thought about bringing Haru with me today, but...[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]...Just the other day, I broke my promise[n]to be there for her on Sports Day.[n]She was bawling and sulking nonstop.[n][f 1 3 65535][w][e]
+
+[msg MSG_002_0_0 [Okumura]]
+[s][bup 0 205 0 0 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]But there was an important matter I couldn't[n]ignore that day, for the company's sake.[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]I know the pain of poverty well,[n]and my wish to protect my employees from it won out.[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]That's also why I shuttered your café, Dad.[n]You can't protect your workers while always running at a loss...[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]Many of them loved that café, though...[n]but they'll understand my point of view someday.[n][f 1 3 65535][w][e]
+
+[msg MSG_003_0_0 [Okumura]]
+[s][bup 0 205 0 0 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]Oh! That's right![n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]I've actually entrusted my secretary to[n]begin searching for a fiancé for Haru![n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]To find a man with impeccable abilities and background,[n]who I can trust to take care of her...[n]That sort of thing.[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]I want to make things easy for Haru,[n]and besides, I'm impatient to see her in her wedding gown.[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]...But I dote too much. She's still only 5.[n][f 1 3 65535][w][e]
+
+[msg MSG_004_0_0 [Okumura]]
+[s][bup 0 205 0 0 0][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]...I should be going.[n]I'd hate to cause trouble for the employees.[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]Dad, Akiko, please keep watch over me.[n]You can at least do that much, can't you?[n][f 1 3 65535][w][e]
+[s][f 4 10 65535 0 0][vp 8 0 0 0 65535 0]It's been so hard since[n]you left out of the blue...[n][f 1 3 65535][w][e]
